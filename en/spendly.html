@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spendly — Tracy Wang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=39">
+  <script src="../site.js"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html">Tracy Wang</a>
+      <button class="menu-btn" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <ul>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="lang" href="../spendly.html" hreflang="zh-Hant">中<span>/</span><b>EN</b></a></li>
+        <li><a class="resume" href="#">Resume
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="wrap cs">
+
+    <!-- 開頭 -->
+    <img class="cs-hero no-border" src="../images/spendly/hero.jpg" alt="Spendly: add expense, split project and settle-up screens">
+
+    <ul class="cs-tags">
+      <li>App design</li>
+      <li>Side project</li>
+    </ul>
+    <h1 class="cs-title">Spendly: Track expenses and split bills, all in one tap</h1>
+
+    <dl class="cs-meta">
+      <div><dt>Scope</dt><dd>Feature &amp; flow planning, user testing, final UI design</dd></div>
+    </dl>
+
+    <!-- 專案背景 -->
+    <section class="cs-sec">
+      <h2 class="cs-h2">Background</h2>
+      <p>Tracking expenses is part of everyday digital life, but research shows a gap between personal finance and splitting bills with others. After a group meal or trip, people often jump between apps to do the math, breaking up the flow. <strong>Spendly</strong> brings “My Ledger,” “Shared Ledger” and “Split Projects” together, so managing money isn’t a solo task but something you can do with others anytime — closer to how people actually live.</p>
+      <img class="cs-img no-border" src="../images/spendly/background.jpg" alt="Paying by phone during a meal with friends">
+
+      <!-- 設計流程（專案背景的小段落） -->
+      <h3 class="cs-sub center">Design Process</h3>
+      <ol class="process">
+        <li><b>Requirements</b><p>Tracking and splitting expenses are frequent needs, but tedious input wears down users’ patience. This project focused on breaking down those pain points and turning fragmented actions into a smooth, intuitive experience.</p></li>
+        <li><b>Logic &amp; Structure</b><p>Distilled data from competitive analysis and a user survey into the core feature logic, so the design direction matched real needs.</p></li>
+        <li><b>Wireframing</b><p>Explored solutions quickly with low-fidelity prototypes and validated assumptions through usability testing — catching logic risks early to cut late-stage changes and work more efficiently.</p></li>
+        <li><b>UI Design</b><p>Extended a new brand identity into the interface, building a systematic visual language and guidelines so the product stays consistent and recognizable across devices.</p></li>
+        <li><b>Design system</b><p>Built the design system with modular logic, turning styles and components into an extensible language that supports the product’s long-term growth.</p></li>
+        <li><b>Prototyping</b><p>Built high-fidelity interactive prototypes to validate the full flow, reviewing interaction details and transitions to make sure the logic holds up in real use.</p></li>
+      </ol>
+    </section>
+
+    <!-- 發現問題 -->
+    <section class="cs-sec">
+      <h2 class="cs-h2">Problem</h2>
+      <p>Expense trackers don’t lack features, yet people still give up on them. To find out why, we approached it from two angles — <strong>user interviews and a survey</strong>, and <strong>competitive analysis</strong> — to understand real user behavior and where existing products fall short.</p>
+
+      <h3 class="cs-divider">User Interviews &amp; Analysis</h3>
+      <div class="split">
+        <div>
+          <p>Before formal design and analysis, I created a survey on everyday expense-tracking and bill-splitting habits to test early assumptions and get more realistic feedback. Collecting responses from friends with different backgrounds helped uncover pain points in real behavior and gave the feature structure and visual experience a data-backed foundation.</p>
+          <p>The research showed that people aged <strong>30–40</strong> are the main users of expense apps. They’re at a busy point in their careers, with <strong>a fast pace of life and strong financial awareness</strong>. So the design shouldn’t just cover features — it needs to fit their lifestyle: logging an expense in seconds, and offering reports that actually mean something.</p>
+        </div>
+        <img class="no-border" src="../images/spendly/age.png" alt="Respondent age distribution: 30–40 is the largest group, followed by 40+ and 20–30">
+      </div>
+
+      <div class="panel">
+        <h4>From the survey and user research, we identified two core pain points in today’s expense apps</h4>
+        <p><strong>Tedious flows and complex interfaces</strong>: too many advanced features raise the barrier to entry, going against the essence of expense tracking — simple and fast.<br>
+        <strong>Features disconnected from real situations</strong>: apps may be feature-rich, but personal ledgers and group bill-splitting usually live apart, with no intuitive link — forcing users to reconcile across apps and enter things twice.</p>
+        <div class="grid-2">
+          <img src="../images/spendly/survey-1.png" alt="Usage: most people have tried tracking expenses but didn’t stick with it — too tedious, forgot and got lazy, nothing good enough">
+          <img src="../images/spendly/survey-2.png" alt="Most annoying part: “it’s a hassle” ranks first, followed by forgetting, complicated categories and splitting bills">
+          <img src="../images/spendly/survey-3.png" alt="What matters most: a clear interface ranks first, followed by features, customization and shared ledgers">
+          <img src="../images/spendly/survey-4.png" alt="If tracking expenses could also split bills: most people said they really need it">
+        </div>
+      </div>
+
+      <h3 class="cs-divider">Competitive Analysis</h3>
+      <p>Breaking down the leading expense-tracking and bill-splitting apps revealed a clear <strong>experience gap</strong> in the market.</p>
+      <p>Expense trackers focus on personal control and data visualization but neglect smooth collaboration and real-time interaction with others. Bill-splitting apps focus on settling up in the moment but stay short-term, with no link to long-term planning — so users end up switching back and forth between apps.</p>
+      <div class="grid-2 cs-gap">
+        <img src="../images/spendly/comp-ttj.jpg" alt="Tiantian Jizhang | Strengths: intuitive, clean interface; quick access to budget editing. To improve: too many categories, charts hard to read, unclear account types">
+        <img src="../images/spendly/comp-cwmoney.jpg" alt="CWMONEY | Strengths: rich expense categories, custom projects. To improve: many features make it hard to learn; monthly details aren’t visible on the first level">
+        <img src="../images/spendly/comp-splitwise.jpg" alt="Splitwise | Strengths: an early bill-splitting app with clear action screens. To improve: dull visuals, unclear information">
+        <img src="../images/spendly/comp-spend-together.jpg" alt="Spend together | Strengths: intuitive, easy-to-read expense charts. To improve: settle-up feels inconsistent with the rest of the app; limited customization">
+      </div>
+    </section>
+
+    <!-- 設計目標 -->
+    <section class="cs-sec">
+      <h2 class="cs-h2">Design Approach</h2>
+      <p>With finance tools so fragmented, we didn’t start by piling on features — we went back to users’ real lives. <strong>Based on the research and user feedback above</strong>, we mapped the full journey across everyday spending, social interactions and money flow, and identified three core motivations that shape the experience, which became the starting point for our design strategy.</p>
+
+      <div class="panel">
+        <div class="motives">
+          <div><img src="../images/spendly/goal-1.png" alt=""><p>Daily spending is full of small things —<br>I just want something simple to use</p></div>
+          <div><img src="../images/spendly/goal-2.png" alt=""><p>Splitting the bill with friends<br>always gets confusing</p></div>
+          <div><img src="../images/spendly/goal-3.png" alt=""><p>Leftover foreign currency from a trip —<br>and a friend happens to need it</p></div>
+        </div>
+        <p class="quote">“ Seamlessly combine expense tracking and bill splitting into one complete financial flow, in one app ”</p>
+      </div>
+
+      <h3 class="goal"><i>1</i>Lightweight tracking built for speed</h3>
+      <p>Everyday spending is fragmented, and users resist tedious steps. They want a clean interface that lets them log quickly — so tracking fits into life instead of taking it over.</p>
+      <h3 class="goal"><i>2</i>Solve splitting the bill at group meals</h3>
+      <p>When everyone orders something different, current ways of calculating are vague and slow. Users need more intuitive logic to handle complex splits and keep money between friends clear and transparent.</p>
+      <h3 class="goal"><i>3</i>Extend into social use with flexible currency exchange</h3>
+      <p>Leftover foreign currency after a trip often just sits idle. By matching it with friends who need it, an “unused” resource becomes a warmer, more social way of managing money.</p>
+    </section>
+
+    <!-- 設計產出 -->
+    <section class="cs-sec cs-sec--far">
+      <h2 class="cs-h2">Deliverables</h2>
+      <img class="cs-img zoomable" src="../images/spendly/design-system.jpg" alt="Spendly design system: colors, header, tabs and buttons, selects and inputs, icons and illustrations, nav and side menu">
+      <p>Before designing solutions, I built a sustainable design system — a systematic component library with a neutral, timeless style — to keep the platform consistent and make future features easier to add and maintain.</p>
+
+      <h3 class="cs-sub center">Logo Design</h3>
+      <p><strong>Spend + Split = Spendly</strong>. The mark is built on the letter “S,” using symmetrical, cut geometric lines to combine spending and splitting. The two overlapping S shapes stand for the flow of money — and for the easy way people share costs with each other.</p>
+      <div class="logo-board">
+        <div class="lb-word"><img src="../images/spendly/logo-word.png" alt="Spendly wordmark and icon"></div>
+        <div class="lb-phone"><img src="../images/spendly/logo-phone.png" alt="Spendly icon on a phone home screen"></div>
+        <div><img src="../images/spendly/logo-orange.png" alt="Orange icon"></div>
+        <div><img src="../images/spendly/logo-navy.png" alt="Navy icon"></div>
+        <div><img src="../images/spendly/logo-black.png" alt="Black icon"></div>
+      </div>
+
+      <h3 class="cs-divider">Mapping the User Flows</h3>
+      <p>Before designing the UI, we mapped the full flows for three core tasks, checking that every entry point, branch and way back made sense. <strong>Split Flow A</strong> starts from “Add expense”: users finish the basic input, then decide whether to turn it into a split, keeping a single path. <strong>Split Flow B</strong> enters split projects from the side menu, covering group management, expense details, simplified splitting and settling up. <strong>Charts &amp; Analysis</strong> brings together views of personal ledgers, shared ledgers and split projects, marking the points that require a VIP upgrade as a basis for the business model.</p>
+      <img class="cs-img no-border zoomable" src="../images/spendly/flow-a.jpg" alt="Split Flow A: choose a split project from Add expense, create or pick a group, then set who paid and who shares">
+      <img class="cs-img no-border zoomable" src="../images/spendly/flow-b.jpg" alt="Split Flow B: enter splitting from the side menu to manage groups, expense details, simplified splitting and settling up">
+      <img class="cs-img no-border zoomable" src="../images/spendly/flow-chart.jpg" alt="Charts flow: choose a ledger, shared ledger or split project; some features require a VIP upgrade">
+      <p class="zoom-hint">Click an image to enlarge</p>
+
+      <h3 class="goal"><i>1</i>Home Flow</h3>
+      <p>The home screen is the hub of the experience, bringing together this month’s spending, a quick-add entry and budget status, so users see the full picture in as few steps as possible. Key points of this flow:</p>
+      <ul class="cs-list">
+        <li><strong>Centralized information</strong>: income, spending and budget grouped by month, so users don’t have to hunt across pages</li>
+        <li><strong>Quick paths to action</strong>: go straight from home to adding an expense, editing the budget or viewing a category</li>
+        <li><strong>Progressive detail</strong>: overview → category → line items, keeping information clear without overload</li>
+        <li><strong>Secondary features in the side menu</strong>: keeps the home screen focused on the main task</li>
+      </ul>
+      <p>With this restructured flow, users complete the full “view → manage → adjust” loop without switching back and forth between pages.</p>
+      <div class="phones-3">
+        <figure><img src="../images/spendly/ui-home.png" alt="Home: calendar and this month’s expenses"><figcaption>Home</figcaption></figure>
+        <figure><img src="../images/spendly/ui-menu.png" alt="Side menu: accounts, recurring transactions, categories, split projects and more"><figcaption>Side menu</figcaption></figure>
+        <figure><img src="../images/spendly/ui-budget.png" alt="Budget: total spending and budget progress by category"><figcaption>Budget</figcaption></figure>
+      </div>
+
+      <h3 class="goal"><i>2</i>Add Expense Flow</h3>
+      <p>“Add expense” is a high-frequency core task that has to be low-friction. Our goal was to cut steps and reduce cognitive load without losing any necessary information. Key improvements:</p>
+      <ul class="cs-list">
+        <li><strong>Single-page structure</strong>: date, account, ledger and category are all set on one page</li>
+        <li><strong>Bottom-sheet pickers</strong>: no page jumps, so users stay in context</li>
+        <li><strong>Clear sections</strong>: modular blocks reduce visual noise</li>
+        <li><strong>Instant amount feedback</strong>: reinforces confirmation and reduces mistakes</li>
+      </ul>
+      <p>With fewer steps and better interactions, users can log a complete entry in seconds, so tracking truly becomes part of everyday life.</p>
+      <div class="phones-3">
+        <figure><img src="../images/spendly/ui-add.png" alt="Add expense: date, account, ledger, category and amount"><figcaption>Add expense</figcaption></figure>
+        <figure><img src="../images/spendly/ui-account.png" alt="Choose an account: cash, credit card, bank account"><figcaption>Choose account</figcaption></figure>
+        <figure><img src="../images/spendly/ui-category.png" alt="Choose a category: food, daily necessities, household, transport and more"><figcaption>Choose category</figcaption></figure>
+      </div>
+
+      <h3 class="goal"><i>3</i>Split Flow</h3>
+      <p>Splitting is a collaborative task that is <strong>information-heavy and needs to be accurate</strong>. Our goal was to break down the complex logic of who paid and who owes through step-by-step guidance, so users can quickly sort out the bill on group trips or meals.</p>
+      <ul class="cs-list">
+        <li><strong>Intuitive branching</strong>: a “Split project” entry on the add-expense page lets users finish the basics first, then decide whether to split, keeping a single path.</li>
+        <li><strong>Step-by-step tabs</strong>: “Expense / Paid by / Split with” breaks a complex split into three steps, reducing overload and effort.</li>
+        <li><strong>Quick group selection</strong>: pick a project from a side sheet, avoiding page jumps and keeping context.</li>
+        <li><strong>Automatic amount check</strong>: shares are matched against the total in real time, keeping group splits accurate and transparent.</li>
+      </ul>
+      <div class="phones-3">
+        <figure><img src="../images/spendly/split-1.png" alt="Split project: Expense tab"><figcaption>Expense</figcaption></figure>
+        <figure><img src="../images/spendly/split-2.png" alt="Split project: Paid by tab"><figcaption>Paid by</figcaption></figure>
+        <figure><img src="../images/spendly/split-3.png" alt="Split project: Split with tab"><figcaption>Split with</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 原型連結 -->
+    <section class="cta">
+      <h2>🔗 View Full Prototype</h2>
+      <p>See the full high-fidelity design and interactions in the <a class="cta-btn" href="https://www.figma.com/proto/oJLARzl1QbFpe5hCSOKK0P/Spendly?page-id=1%3A29484&amp;node-id=2115-23773&amp;viewport=57%2C672%2C0.13&amp;t=HEN1vP9lJ58UTUwh-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=2115%3A23773" target="_blank" rel="noopener">Figma Prototype →</a></p>
+      <p class="thanks">Thanks for stopping by! ☺</p>
+    </section>
+
+  </main>
+
+  <nav class="next-project wrap" aria-label="Project navigation">
+    <a class="back" href="index.html#work">← Back to all work</a>
+    <a class="next" href="modular.html">Next: Modular Website Design →</a>
+  </nav>
+
+  <footer class="footer">
+    <div class="wrap">© 2026 Tracy Wang</div>
+  </footer>
+
+  <!-- 點圖放大 -->
+  <div class="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="Close">×</button>
+    <img alt="">
+  </div>
+  <script>
+    const lb = document.querySelector('.lightbox');
+    const lbImg = lb.querySelector('img');
+    document.querySelectorAll('.zoomable').forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    const close = () => { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; };
+    lb.addEventListener('click', e => { if (e.target !== lbImg) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  </script>
+
+</body>
+</html>

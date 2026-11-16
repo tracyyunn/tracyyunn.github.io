@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KICKR Modular Website — Tracy Wang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Sans+TC:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=39">
+  <script src="../site.js"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html">Tracy Wang</a>
+      <button class="menu-btn" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
+      <ul>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="lang" href="../modular.html" hreflang="zh-Hant">中<span>/</span><b>EN</b></a></li>
+        <li><a class="resume" href="#">Resume
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="wrap cs">
+
+    <!-- 開頭 -->
+    <img class="cs-hero" src="../images/modular/hero.jpg" alt="Modular match-content system: football news website in light and dark mode">
+
+    <ul class="cs-tags">
+      <li>Backend system</li>
+      <li>Website</li>
+      <li>AI-assisted Development</li>
+    </ul>
+    <p class="cs-date">Aug 2025</p>
+    <h1 class="cs-title">KICKR: A Modular Football News Website</h1>
+
+    <dl class="cs-meta">
+      <div><dt>Role</dt><dd>UIUX Designer</dd></div>
+      <div><dt>Responsibilities</dt><dd>Research, UI/UX design, design system, back-office flow improvements</dd></div>
+    </dl>
+
+    <!-- 專案概覽 -->
+    <section class="cs-overview">
+      <h2 class="cs-h2">Project Overview</h2>
+      <div class="card">
+        <h3>Outcome</h3>
+        <p>With the modular design system built early on, the team extended the same design framework to two other types of websites — an e-commerce platform and a news site. Shared components and Figma Variables for managing visual modes cut duplicate design work and made the design more consistent and scalable.</p>
+      </div>
+      <div class="cards-3">
+        <div class="card">
+          <h3>My Role</h3>
+          <p>I led early research, the overall UI/UX design and the design system. I also worked with engineers to test the AI-assisted back-office interface, reviewing content creation, block layout and publishing from a user’s perspective to improve the experience.</p>
+        </div>
+        <div class="card">
+          <h3>Challenge</h3>
+          <p>Building one modular framework that serves both the reading experience and back-office content management. Beyond handling the hierarchy and frequent updates of football content, the layouts had to scale across page types and map cleanly to block-based management in the back office.</p>
+        </div>
+        <div class="card">
+          <h3>Team Goal</h3>
+          <p>Build a football news website around a modular design system, connecting front-end presentation with block-based content management — so the framework can be reused, adjusted flexibly, and extended to other types of websites.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 設計流程 -->
+    <section class="cs-sec">
+      <h3 class="cs-sub center">Design Process</h3>
+      <ol class="process">
+        <li><b>Requirements</b><p>The project balanced the front-end experience with a highly self-serve back office. We built a flexible management system so the client can easily update content and configure the site.</p></li>
+        <li><b>Design</b><p>To make the site easier to maintain and scale, I used a modular approach — building block components that can be freely combined, so the client can create varied page layouts from the back office. Figma Variables power the light / dark mode switch, moving beyond typical sports-site visuals while keeping content immersive and readable in any lighting.</p></li>
+      </ol>
+    </section>
+
+    <!-- 設計目標 -->
+    <section class="cs-sec">
+      <h2 class="cs-h2">Design Approach</h2>
+      <p>A team experiment exploring design systems and AI-assisted development, with football as the theme. With the brand’s future growth in mind, we took a block-based design approach.</p>
+
+      <h3 class="goal"><i>1</i>Modular by design, built to expand</h3>
+      <p>A modular structure was the main design goal, so it could be quickly extended to other projects. Since those projects might be in different industries, we aimed for a neutral visual style that clients can adapt.</p>
+
+      <h3 class="goal"><i>2</i>A front end ready to launch</h3>
+      <p>We analyzed other sports news websites to make sure the essential features and content structure were covered. The client wanted a fully functional, highly readable front end they could put into operation right away.</p>
+
+    </section>
+
+    <!-- 設計執行 -->
+    <section class="cs-sec cs-sec--far">
+      <h2 class="cs-h2">Design Execution</h2>
+      <div class="shots-2">
+        <figure><img src="../images/modular/tokens.jpg" alt="Colors / Semantic variables: each color’s value in light and dark mode"></figure>
+        <figure><img src="../images/modular/colors.jpg" alt="Primary and supporting color scales in light and dark mode"></figure>
+      </div>
+
+      <h3 class="goal"><i>1</i>Front End</h3>
+      <p>The front end is designed mainly for reading on mobile. The home page is made of content blocks — such as <strong>Today’s Highlights, Player Spotlights, Hot Topics in Football, Trending and Football Trivia</strong> — and each maps to a block type in the back office (card list, article list, carousel), so the client can reorder and edit them as needed.</p>
+      <p>Article cards share one structure — image, title, summary and tags — keeping a consistent reading rhythm across blocks. Users can switch between <strong>light and dark mode</strong> from the top right anytime, and long pages have a back-to-top button for easy browsing.</p>
+      <video class="phone-clip" src="../images/modular/blog.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Mobile walkthrough video: browsing the football site and switching between light and dark mode"></video>
+
+      <h3 class="goal"><i>2</i>Back-Office Editor Logic</h3>
+      <p>Beyond the front end, I helped improve the back-office workflow. Because the back office was built with AI assistance, its early flows didn’t always match real use. Starting from how content appears on the front end, I reviewed the back-office logic and reworked unintuitive steps, so managing content and seeing it on the site feel consistent and predictable.</p>
+      <div class="flow-pair">
+        <figure><img class="zoomable" src="../images/modular/flow-backend.jpg" alt="Back-office structure: site settings, content management and analytics"></figure>
+        <figure><img class="zoomable" src="../images/modular/flow-block.jpg" alt="Layout setup flow: add a block, set its title and content; multiple smaller blocks can be created inside a large block"></figure>
+      </div>
+      <p class="zoom-hint">Click an image to enlarge</p>
+    </section>
+
+  </main>
+
+  <nav class="next-project wrap" aria-label="Project navigation">
+    <a class="back" href="index.html#work">← Back to all work</a>
+    <a class="next" href="fuu.html">Next: Fuu →</a>
+  </nav>
+
+  <footer class="footer">
+    <div class="wrap">© 2026 Tracy Wang</div>
+  </footer>
+
+  <!-- 點圖放大 -->
+  <div class="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="Close">×</button>
+    <img alt="">
+  </div>
+  <script>
+    const lb = document.querySelector('.lightbox');
+    const lbImg = lb.querySelector('img');
+    document.querySelectorAll('.zoomable').forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    const close = () => { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; };
+    lb.addEventListener('click', e => { if (e.target !== lbImg) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

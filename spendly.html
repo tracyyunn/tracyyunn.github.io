@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spendly — Tracy Wang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=39">
+  <script src="site.js"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html">Tracy Wang</a>
+      <button class="menu-btn" aria-label="選單" onclick="this.closest('.nav').classList.toggle('open')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <ul>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="lang" href="en/spendly.html" hreflang="en"><b>中</b><span>/</span>EN</a></li>
+        <li><a class="resume" href="#">Resume
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="wrap cs">
+
+    <!-- 開頭 -->
+    <img class="cs-hero no-border" src="images/spendly/hero.jpg" alt="Spendly：記一筆、分帳專案與歸還清算三支手機畫面">
+
+    <ul class="cs-tags">
+      <li>App design</li>
+      <li>Side project</li>
+    </ul>
+    <h1 class="cs-title">Spendly：全能記帳與分帳專家，一鍵搞定</h1>
+
+    <dl class="cs-meta">
+      <div><dt>專案包含項目</dt><dd>功能流程規劃、使用者測試、設計完稿</dd></div>
+    </dl>
+
+    <!-- 專案背景 -->
+    <section class="cs-sec">
+      <h2 class="cs-h2">專案背景 <span>Background</span></h2>
+      <p>記帳是多數人的數位生活日常，但研究發現，現有產品往往在「個人理財」與「社交分帳」之間存在斷層。使用者在聚餐或出遊後，常需在不同 App 間切換計算，導致流程破碎。<strong>Spendly</strong> 將「我的帳本」、「共享帳本」與「分帳專案」深度整合，讓理財不再只是單打獨鬥，而是能隨時隨地與他人協作，更符合實際使用情境。</p>
+      <img class="cs-img no-border" src="images/spendly/background.jpg" alt="朋友聚餐時用手機付款">
+
+      <!-- 設計流程（專案背景的小段落） -->
+      <h3 class="cs-sub center">設計流程 <span>Design Process</span></h3>
+      <ol class="process">
+        <li><b>需求定義</b><p>記帳與分帳是高頻的生活需求，然而繁瑣的輸入流程往往消磨使用者耐心。本專案聚焦於拆解操作痛點，將零碎的行為重構為流暢且直覺的數位體驗。</p></li>
+        <li><b>邏輯規劃</b><p>透過競品分析與使用者問卷收集到的數據收斂為核心功能邏輯，確保設計方向切合實際需求。</p></li>
+        <li><b>框架繪製</b><p>先以低保真原型快速探索解法方向，藉由易用性測試驗證決策假設，將邏輯風險前置處理，降低後期修改成本並提升設計效率。</p></li>
+        <li><b>UI Design</b><p>針對全新品牌定位，從品牌視覺延伸至介面設計。建立系統化的視覺語言與規範，確保產品在不同載體下皆具備高度的一致性與辨識度。</p></li>
+        <li><b>Design system</b><p>以模組化邏輯建構設計系統，讓樣式與元件形成可被延展的語言，支撐產品的長期成長與演進。</p></li>
+        <li><b>Prototyping</b><p>製作高保真互動原型進行整體流程驗證，透過動態演示檢視操作細節與轉場節奏，確保設計邏輯在實際操作情境中成立。</p></li>
+      </ol>
+    </section>
+
+    <!-- 發現問題 -->
+    <section class="cs-sec">
+      <h2 class="cs-h2">發現問題 <span>Problem</span></h2>
+      <p>記帳工具並不缺功能，但使用者仍然記不下去。為了找出原因，我們從<strong>使用者訪談與問卷</strong>和<strong>競品分析</strong>兩個方向著手，分別了解使用者的真實行為，以及現有產品的體驗斷層。</p>
+
+      <h3 class="cs-divider">使用者訪談與分析</h3>
+      <div class="split">
+        <div>
+          <p>在進入正式設計與分析之前，為了驗證初步設想並獲取更真實的市場反饋，我設計了一份針對「日常記帳與分帳習慣」的問卷調查。透過收集身邊不同背景友人的回饋，旨在從實際的使用者行為中挖掘出潛在痛點，為後續的功能架構與視覺體驗提供具備數據支撐的設計依據。</p>
+          <p>研究顯示 <strong>30-40 歲</strong> 為記帳軟體的主要使用族群。此年齡層正處於職涯衝刺期，<strong>生活步調極快且理財意識較強烈</strong>。因此，設計焦點不應僅停留在功能滿足，更需深度融合生活模式——例如：如何在繁忙生活中實現「秒速記帳」，以及提供更具有意義的分析報表。</p>
+        </div>
+        <img class="no-border" src="images/spendly/age.png" alt="受訪者年齡分佈：30-40 歲最多，其次為 40 歲以上與 20-30 歲">
+      </div>
+
+      <div class="panel">
+        <h4>透過問卷調查與使用者研究，我們歸納出目前記帳工具的兩大核心痛點</h4>
+        <p><strong>流程繁冗且介面複雜</strong>：過多的進階功能導致操作門檻過高，違背了記帳應「簡單、快速」的本質。<br>
+        <strong>功能與情境的脫節</strong>：市面上的 App 雖然功能完整，但個人帳本與多人分帳功能往往是分開的，缺乏直覺的整合邏輯，迫使使用者須手動跨平台對帳與重複輸入。</p>
+        <div class="grid-2">
+          <img src="images/spendly/survey-1.png" alt="使用比例：多數人有記帳經驗但沒有持續，原因包含太繁瑣、忘記就懶、沒有好用">
+          <img src="images/spendly/survey-2.png" alt="記帳最麻煩的事：好麻煩最多，其次為忘記、分類繁瑣、拆帳">
+          <img src="images/spendly/survey-3.png" alt="記帳在意什麼：清楚的介面設計最多，其次為功能層面、客製化、共享帳本">
+          <img src="images/spendly/survey-4.png" alt="如果記帳同時也可以分帳：大多數人表示非常需要">
+        </div>
+      </div>
+
+      <h3 class="cs-divider">競品分析</h3>
+      <p>透過對市面主流記帳及分帳進行分析及拆解，我們發現理財市場存在顯著的<strong>體驗斷層</strong>。</p>
+      <p>記帳工具強調個人財務掌控與數據可視化，卻忽略多人協作時的流暢性與即時互動；分帳工具則專注於即時結算，但多停留在短期情境，缺乏與長期資產規劃的連動設計，導致使用者需在不同平台間來回切換。</p>
+      <div class="grid-2 cs-gap">
+        <img src="images/spendly/comp-ttj.jpg" alt="天天記帳｜優勢：直觀操作的介面設計、畫面簡潔、可以快速查看預算編輯；待調整：分類項目太繁雜、圖表呈現不易查看、帳戶分類不夠明確">
+        <img src="images/spendly/comp-cwmoney.jpg" alt="CWMONEY｜優勢：開消費別選擇豐富、能依需求設立對應專案；待調整：功能較多不易上手、沒辦法在第一層瀏覽該月開銷細項">
+        <img src="images/spendly/comp-splitwise.jpg" alt="Splitwise｜優勢：很早期的分帳軟體、執行動作畫面清楚；待調整：畫面過於單調乏味、資訊呈現不清楚">
+        <img src="images/spendly/comp-spend-together.jpg" alt="Spend together｜優勢：直觀操作、圖表開銷設計淺顯易懂；待調整：清帳的地方與整個 app 比較沒有一致性、客製化需求比較限制">
+      </div>
+    </section>
+
+    <!-- 設計目標 -->
+    <section class="cs-sec">
+      <h2 class="cs-h2">設計目標 <span>Design Approach</span></h2>
+      <p>在數位理財工具高度分化的當下，我們不再從功能堆疊出發，而是回到使用者的真實生活情境。<strong>根據上述的研究與使用者回饋分析</strong>，我們重新梳理日常消費、社交互動與資產流動的完整旅程，進一步歸納出三個影響理財體驗的核心動機，作為本次設計策略的出發點。</p>
+
+      <div class="panel">
+        <div class="motives">
+          <div><img src="images/spendly/goal-1.png" alt=""><p>生活花費是比較瑣碎的事情，<br>只想要簡單操作的平台</p></div>
+          <div><img src="images/spendly/goal-2.png" alt=""><p>朋友聚餐常常<br>算不清楚</p></div>
+          <div><img src="images/spendly/goal-3.png" alt=""><p>出國多換的錢用不完，<br>朋友剛好需要</p></div>
+        </div>
+        <p class="quote">“ 將記帳與分帳體驗無縫整合，實現單一平台內的完整財務流程 ”</p>
+      </div>
+
+      <h3 class="goal"><i>1</i>追求極致效率的輕量化記帳</h3>
+      <p>生活支出本就細碎，使用者抗拒繁瑣的操作，更渴望一個介面清爽、能快速完成紀錄的平台，讓記帳回歸生活而不占用生活。</p>
+      <h3 class="goal"><i>2</i>解決聚餐拆帳</h3>
+      <p>當多人聚餐點餐不一時，現有的計算方式往往模糊且緩慢，使用者需要更直覺的邏輯來處理複雜的拆帳需求，確保財務往來清晰透明。</p>
+      <h3 class="goal"><i>3</i>延伸社交情境並靈活換匯</h3>
+      <p>旅遊後剩餘的外幣往往成為閒置資產，透過與朋友間的靈活調度與需求對接，能將原本「無效」的資源轉化為更有溫度的理財互動。</p>
+    </section>
+
+    <!-- 設計產出 -->
+    <section class="cs-sec cs-sec--far">
+      <h2 class="cs-h2">設計產出 <span>Deliverables</span></h2>
+      <img class="cs-img zoomable" src="images/spendly/design-system.jpg" alt="Spendly Design System：色彩、Header、Tab 與 Button、Select 與 Input、Icon 與插圖、Nav 與 Side menu">
+      <p>進入解決方案設計前，先建立可持續發展的 Design System，透過系統化的元件庫與中性、耐看的視覺風格，確保平台整體一致性，並提升未來功能擴充與維護的彈性。</p>
+
+      <h3 class="cs-sub center">Logo Design</h3>
+      <p><strong>Spend + Split = Spendly</strong>。視覺上以首字母「S」作為基礎，透過幾何線條的對稱與切割，結合「消費」與「分帳」。雙重 S 形狀的交疊不僅象徵了資金的流動，更代表了人與人之間輕鬆分配開支的互動關係。</p>
+      <div class="logo-board">
+        <div class="lb-word"><img src="images/spendly/logo-word.png" alt="Spendly 標準字與圖示"></div>
+        <div class="lb-phone"><img src="images/spendly/logo-phone.png" alt="Spendly 圖示放在手機桌面上的樣子"></div>
+        <div><img src="images/spendly/logo-orange.png" alt="橘色圖示"></div>
+        <div><img src="images/spendly/logo-navy.png" alt="藍色圖示"></div>
+        <div><img src="images/spendly/logo-black.png" alt="黑色圖示"></div>
+      </div>
+
+      <h3 class="cs-divider">釐清使用者流程</h3>
+      <p>在進入介面設計前，我們先將三個核心任務的使用者流程完整梳理出來，確認每個入口、分支與返回路徑都合理。<strong>分帳 Flow A</strong> 從「記一筆」出發，讓使用者完成基礎輸入後，再決定是否轉為分帳，維持單一路徑；<strong>分帳 Flow B</strong> 從側邊選單進入分帳專案，涵蓋群組管理、消費細項、簡化分帳流程與歸還清算；<strong>圖表分析</strong>則整合個人帳本、共享帳本與分帳專案的檢視路徑，並標示出需要 VIP 升級的節點，作為後續商業模式的規劃依據。</p>
+      <img class="cs-img no-border zoomable" src="images/spendly/flow-a.jpg" alt="分帳 Flow A：從記一筆選擇分帳專案，新增或選擇群組後設定付款者與分帳者">
+      <img class="cs-img no-border zoomable" src="images/spendly/flow-b.jpg" alt="分帳 Flow B：從側邊欄進入分帳頁面，管理群組、消費細項、簡化分帳流程與歸還清算">
+      <img class="cs-img no-border zoomable" src="images/spendly/flow-chart.jpg" alt="圖表分析流程：選擇帳本、共享帳本與分帳專案，部分功能需 VIP 升級">
+      <p class="zoom-hint">點擊圖片可放大</p>
+
+      <h3 class="goal"><i>1</i>首頁流程</h3>
+      <p>首頁作為整體體驗的核心中樞，整合本月支出總覽、快速記帳入口與預算狀態，讓使用者在最少操作步驟內掌握財務全貌。本流程設計重點在於：</p>
+      <ul class="cs-list">
+        <li><strong>資訊集中化</strong>：以月份為單位整合收支與預算，降低跨頁查找成本</li>
+        <li><strong>快速決策路徑</strong>：從首頁可直接進入記帳、預算編輯或類別細節</li>
+        <li><strong>層級漸進展開</strong>：由總覽 → 類別 → 明細，確保資訊清晰且不過載</li>
+        <li><strong>Side Menu 補充次要功能</strong>：避免首頁承載過多選項，維持主任務聚焦</li>
+      </ul>
+      <p>透過此流程重構，使用者無需來回切換頁面，即可完成「查看 → 管理 → 調整」的完整操作循環。</p>
+      <div class="phones-3">
+        <figure><img src="images/spendly/ui-home.png" alt="首頁：月曆與本月支出列表"><figcaption>首頁</figcaption></figure>
+        <figure><img src="images/spendly/ui-menu.png" alt="Side menu：帳戶管理、固定收支、分類管理、分帳專案等"><figcaption>Side menu</figcaption></figure>
+        <figure><img src="images/spendly/ui-budget.png" alt="預算編製：支出總額與各類別預算進度"><figcaption>預算編製</figcaption></figure>
+      </div>
+
+      <h3 class="goal"><i>2</i>記一筆流程</h3>
+      <p>「記一筆」被定義為高頻且必須低摩擦的核心任務。我們的目標是在維持資訊完整性的前提下，壓縮操作步驟，降低認知負擔。本流程優化重點：</p>
+      <ul class="cs-list">
+        <li><strong>單頁式結構整合</strong>：日期、帳戶、帳本與類別集中於同一頁完成設定</li>
+        <li><strong>底部彈層選擇機制</strong>：避免頁面跳轉，維持操作情境連續性</li>
+        <li><strong>清晰資訊分區</strong>：以模組化區塊分層，降低視覺干擾</li>
+        <li><strong>即時金額回饋</strong>：強化輸入確認感，減少誤操作</li>
+      </ul>
+      <p>透過流程壓縮與互動優化，使用者可在數秒內完成一筆完整紀錄，讓記帳行為真正融入日常。</p>
+      <div class="phones-3">
+        <figure><img src="images/spendly/ui-add.png" alt="記一筆：日期、帳戶、帳本、類別與金額"><figcaption>記一筆</figcaption></figure>
+        <figure><img src="images/spendly/ui-account.png" alt="選擇支出帳戶：現金、信用卡、銀行帳戶"><figcaption>選擇帳戶</figcaption></figure>
+        <figure><img src="images/spendly/ui-category.png" alt="選擇類別：飲食、生活用品、家用、交通等"><figcaption>選擇類別</figcaption></figure>
+      </div>
+
+      <h3 class="goal"><i>3</i>分帳流程</h3>
+      <p>「分帳」被定義為<strong>高資訊量且需高準確性</strong>的協作任務。我們的目標是透過「線性引導」將複雜的代付與分攤邏輯拆解，確保使用者在多人旅遊或團體聚餐時，能快速釐清帳務歸屬。</p>
+      <ul class="cs-list">
+        <li><strong>直覺式路徑分流</strong>：於記帳頁整合「分帳專案」入口，使用者可完成基礎輸入後再決定是否轉為分帳，維持單一路徑邏輯。</li>
+        <li><strong>分段式頁籤引導</strong>：以「支出 / 付款者 / 分帳者」三步驟拆解複雜分配流程，降低資訊過載與理解成本。</li>
+        <li><strong>群組快速選取機制</strong>：透過側向彈層選擇專案，減少頁面跳轉，保留原有操作脈絡。</li>
+        <li><strong>自動化金額校驗</strong>：即時對應分配金額與總額，確保多人分帳的準確與透明。</li>
+      </ul>
+      <div class="phones-3">
+        <figure><img src="images/spendly/split-1.png" alt="分帳專案：支出頁籤"><figcaption>支出</figcaption></figure>
+        <figure><img src="images/spendly/split-2.png" alt="分帳專案：付款者頁籤"><figcaption>付款者</figcaption></figure>
+        <figure><img src="images/spendly/split-3.png" alt="分帳專案：分帳者頁籤"><figcaption>分帳者</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 原型連結 -->
+    <section class="cta">
+      <h2>🔗 View Full Prototype</h2>
+      <p>完整高保真設計稿與互動動線請參閱 <a class="cta-btn" href="https://www.figma.com/proto/oJLARzl1QbFpe5hCSOKK0P/Spendly?page-id=1%3A29484&amp;node-id=2115-23773&amp;viewport=57%2C672%2C0.13&amp;t=HEN1vP9lJ58UTUwh-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=2115%3A23773" target="_blank" rel="noopener">Figma Prototype →</a></p>
+      <p class="thanks">Thanks for stopping by! ☺</p>
+    </section>
+
+  </main>
+
+  <nav class="next-project wrap" aria-label="作品導覽">
+    <a class="back" href="index.html#work">← 回到所有作品</a>
+    <a class="next" href="modular.html">下一個作品：模組化網站設計 →</a>
+  </nav>
+
+  <footer class="footer">
+    <div class="wrap">© 2026 Tracy Wang</div>
+  </footer>
+
+  <!-- 點圖放大 -->
+  <div class="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="關閉">×</button>
+    <img alt="">
+  </div>
+  <script>
+    const lb = document.querySelector('.lightbox');
+    const lbImg = lb.querySelector('img');
+    document.querySelectorAll('.zoomable').forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    const close = () => { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; };
+    lb.addEventListener('click', e => { if (e.target !== lbImg) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  </script>
+
+</body>
+</html>

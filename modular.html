@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-Hant"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>模組化網站設計 — Tracy Wang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Sans+TC:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=39">
+  <script src="site.js"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html">Tracy Wang</a>
+      <button class="menu-btn" aria-label="選單" onclick="this.closest('.nav').classList.toggle('open')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
+      <ul>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="lang" href="en/modular.html" hreflang="en"><b>中</b><span>/</span>EN</a></li>
+        <li><a class="resume" href="#">Resume
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="wrap cs">
+
+    <!-- 開頭 -->
+    <img class="cs-hero" src="images/modular/hero.jpg" alt="模組化賽事管理系統：足球資訊網站設計，Light 與 Dark Mode 的手機畫面">
+
+    <ul class="cs-tags">
+      <li>Backend system</li>
+      <li>Website</li>
+      <li>AI-assisted Development</li>
+    </ul>
+    <p class="cs-date">2025年8月</p>
+    <h1 class="cs-title">模組化賽事管理系統：足球資訊網站設計</h1>
+
+    <dl class="cs-meta">
+      <div><dt>擔任角色</dt><dd>UIUX Designer</dd></div>
+      <div><dt>負責項目</dt><dd>資料蒐集、UI/UX 設計、Design System、後台流程優化</dd></div>
+    </dl>
+
+    <!-- 專案概覽 -->
+    <section class="cs-overview">
+      <h2 class="cs-h2">專案概覽 <span>Project Overview</span></h2>
+      <div class="card">
+        <h3>成果展出</h3>
+        <p>透過前期建立的模組化 Design System，團隊成功將同一套設計架構延伸至另外兩個不同類型的網站（電商平台與新聞網站）。藉由共用元件與 Figma Variables 管理不同視覺 Mode，降低重複設計成本，並提升設計的一致性與擴充效率。</p>
+      </div>
+      <div class="cards-3">
+        <div class="card">
+          <h3>我的角色</h3>
+          <p>負責前期資料蒐集、整體 UI/UX 設計與 Design System 規劃。此外，也與工程師合作測試 AI 輔助開發的後台介面，從使用者角度檢視內容建立、區塊配置與發佈流程，協助優化操作體驗。</p>
+        </div>
+        <div class="card">
+          <h3>專案挑戰</h3>
+          <p>如何建立一套能同時滿足前台閱讀體驗與後台內容管理需求的模組化架構。除了掌握足球賽事專欄的資訊層級與頻繁更新特性，也需要考量不同頁面版型的延展性，讓設計能有效對應後台的區塊化管理方式。</p>
+        </div>
+        <div class="card">
+          <h3>團隊目標</h3>
+          <p>建立以模組化 Design System 為核心的足球資訊網站，串接前台視覺呈現與後台區塊化內容管理，讓設計架構能重複應用、靈活調整，並延伸至不同類型的網站。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 設計流程 -->
+    <section class="cs-sec">
+      <h3 class="cs-sub center">設計流程 <span>Design Process</span></h3>
+      <ol class="process">
+        <li><b>需求定義</b><p>專案兼顧前台體驗與後台高度自主性。我們建構了一套靈活的後台管理系統，讓客戶能輕鬆掌握前台內容更新與網站配置。</p></li>
+        <li><b>Design</b><p>為提升網站的維護效率與擴充性，本專案採用模組化設計，建立可自由組合與配置的區塊組件，讓客戶能透過後台靈活打造多樣化的網頁版型。同時運用 Figma Variables 支援 Light / Dark Mode 切換，突破傳統賽事網站的視覺框架，兼顧沉浸式體驗與不同光線環境下的資訊易讀性。</p></li>
+      </ol>
+    </section>
+
+    <!-- 設計目標 -->
+    <section class="cs-sec">
+      <h2 class="cs-h2">設計目標 <span>Design Approach</span></h2>
+      <p>以足球賽事為主題，一次探索 Design System 與 AI-assisted Development 的團隊實驗。考量到品牌後續的擴充需求，我們採取「區塊化」的設計策略。</p>
+
+      <h3 class="goal"><i>1</i>專案模組化與橫向擴張</h3>
+      <p>運用模組化的架構為設計主要目標，希望往後能快速延伸並啟用在其他專案。考量到擴充的產業性質不同，希望能做出中性視覺保有客戶彈性調整的平台。</p>
+
+      <h3 class="goal"><i>2</i>製作可直接上線使用的前台網頁設計</h3>
+      <p>透過分析其他運動賽事的資訊網站，確保涵蓋基本功能與內容結構。客戶希望有一套具備完整功能與良好可讀性的前台介面，讓他們可立即投入實際營運的網站。</p>
+
+    </section>
+
+    <!-- 設計執行 -->
+    <section class="cs-sec cs-sec--far">
+      <h2 class="cs-h2">設計執行 <span>Design Execution</span></h2>
+      <div class="shots-2">
+        <figure><img src="images/modular/tokens.jpg" alt="Colors / Semantic 變數表：每個顏色在 Light Mode 與 Dark Mode 對應的色票"></figure>
+        <figure><img src="images/modular/colors.jpg" alt="主色與輔助色在 Light 與 Dark Mode 的色階"></figure>
+      </div>
+
+      <h3 class="goal"><i>1</i>前台展示</h3>
+      <p>前台以手機閱讀情境為主要設計對象。首頁由多個內容區塊組成，例如<strong>本日焦點、球星導讀、足壇熱點、熱門主題與足球冷知識</strong>，每個區塊都對應後台的一種區塊類型（卡片列表、文章列表、輪播圖），客戶可以依需求調整順序與內容。</p>
+      <p>文章卡片統一採用「圖片＋標題＋摘要＋標籤」的結構，讓不同區塊的內容維持一致的閱讀節奏。右上角可隨時切換 <strong>Light / Dark Mode</strong>，長頁面則提供回到頂端的按鈕，讓使用者瀏覽大量賽事內容時也能輕鬆操作。</p>
+      <video class="phone-clip" src="images/modular/blog.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="手機版前台操作影片：瀏覽足球資訊網站並切換 Light / Dark Mode"></video>
+
+      <h3 class="goal"><i>2</i>後台編輯器介面邏輯</h3>
+      <p>除了前台介面設計外，我也參與後台操作流程的優化。由於後台系統透過 AI 協助開發，初期流程與實際使用情境仍有調整空間，因此我從前台使用脈絡出發，協助檢視後台操作邏輯，調整不直覺的流程節點，讓內容管理與前台呈現之間能維持一致且可預期的使用體驗。</p>
+      <div class="flow-pair">
+        <figure><img class="zoomable" src="images/modular/flow-backend.jpg" alt="後台架構流程：網站設定、內容管理與網站統計"></figure>
+        <figure><img class="zoomable" src="images/modular/flow-block.jpg" alt="版型設定流程：新增區塊、設定標題與內容，可在大區塊裡重複建立多個小區塊"></figure>
+      </div>
+      <p class="zoom-hint">點擊圖片可放大</p>
+    </section>
+
+  </main>
+
+  <nav class="next-project wrap" aria-label="作品導覽">
+    <a class="back" href="index.html#work">← 回到所有作品</a>
+    <a class="next" href="fuu.html">下一個作品：Fuu →</a>
+  </nav>
+
+  <footer class="footer">
+    <div class="wrap">© 2026 Tracy Wang</div>
+  </footer>
+
+  <!-- 點圖放大 -->
+  <div class="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="關閉">×</button>
+    <img alt="">
+  </div>
+  <script>
+    const lb = document.querySelector('.lightbox');
+    const lbImg = lb.querySelector('img');
+    document.querySelectorAll('.zoomable').forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    const close = () => { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; };
+    lb.addEventListener('click', e => { if (e.target !== lbImg) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
