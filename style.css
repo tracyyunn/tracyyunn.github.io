@@ -396,7 +396,7 @@ body { transition: opacity .25s ease, transform .25s ease; }
 .phone-clip { display: block; width: 100%; max-width: 320px; margin: 40px auto 0; clip-path: inset(0 1.2% round 15% / 7.5%); }
 
 /* 設計流程只有兩步時改成兩欄，不留空位 */
-@media (min-width: 810px) { .process:has(> li:nth-child(2):last-child) { grid-template-columns: 1fr 1fr; gap: 56px 64px; } }
+@media (min-width: 810px) { .process:not(.process--stack):has(> li:nth-child(2):last-child) { grid-template-columns: 1fr 1fr; gap: 56px 64px; } }
 
 
 /* 首頁作品卡片（B 版：灰底卡片，字在上、圖在下；第一排 大＋小，第二排 兩張一樣大） */
@@ -521,3 +521,21 @@ body { transition: opacity .25s ease, transform .25s ease; }
   .nav ul a:active { color: #1C35A8; }
   .nav ul a:focus-visible { outline: 2px solid #1C35A8; outline-offset: 4px; border-radius: 4px; }
 }
+
+/* Fuu：互動原型連結（標題下方按鈕＋影片下方小字） */
+.proto-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 32px; padding: 12px 22px; border-radius: 999px; background: #1C35A8; color: #fff; font-weight: 600; font-size: 15px; text-decoration: none; transition: background .15s; }
+.proto-btn:hover { background: #162B8A; }
+.deliv-media { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.proto-link { font-size: 14px; color: var(--muted); text-align: center; margin: 0; }
+.proto-link a { color: #1C35A8; font-weight: 600; text-decoration: none; }
+.proto-link a:hover { text-decoration: underline; }
+
+/* 選單捲動效果：捲動後毛玻璃＋變矮；往下捲收起、往上捲出現（電腦版） */
+@media (min-width: 810px) {
+  .nav { transition: background .3s, box-shadow .3s, transform .35s ease; }
+  .nav .wrap { transition: height .3s; }
+  .nav.scrolled { background: rgba(255,255,255,.8); backdrop-filter: saturate(180%) blur(16px); -webkit-backdrop-filter: saturate(180%) blur(16px); box-shadow: 0 1px 0 rgba(0,0,0,.06); }
+  .nav.scrolled .wrap { height: 64px; }
+  .nav.hide { transform: translateY(-100%); }
+}
+@media (prefers-reduced-motion: reduce) { .nav, .nav .wrap { transition: none; } }

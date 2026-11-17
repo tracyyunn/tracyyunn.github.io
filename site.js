@@ -81,3 +81,18 @@ document.addEventListener('click', function (e) {
   document.body.classList.remove('menu-open');
   var b = nav.querySelector('.menu-btn'); if (b) b.setAttribute('aria-expanded', 'false');
 });
+
+// 選單捲動效果：捲動後毛玻璃＋變矮；往下捲收起、往上捲出現（電腦版）
+(function () {
+  var last = 0;
+  function onScroll() {
+    var y = window.scrollY, nav = document.querySelector('.nav');
+    if (!nav) return;
+    nav.classList.toggle('scrolled', y > 12);
+    nav.classList.toggle('hide', y > last && y > 160 && !nav.classList.contains('open'));
+    last = y;
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('DOMContentLoaded', onScroll);
+  window.addEventListener('load', onScroll);
+})();
