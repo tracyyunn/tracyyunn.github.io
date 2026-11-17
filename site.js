@@ -44,3 +44,40 @@ window.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', check, { passive: true });
   check();
 });
+
+// 選單：目前所在頁面的項目變藍色；Resume 一次下載中英兩個版本
+window.addEventListener('DOMContentLoaded', function () {
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var nav = document.querySelector('.nav ul');
+  if (!nav) return;
+  nav.querySelectorAll('a:not(.lang):not(.resume)').forEach(function (a) {
+    var t = a.getAttribute('href') || '';
+    var isAbout = /about\.html$/.test(t);
+    var isWork = /index\.html#work$/.test(t);
+    if ((isAbout && page === 'about.html') || (isWork && page !== 'about.html')) a.setAttribute('aria-current', 'page');
+  });
+  var r = nav.querySelector('a.resume');
+  if (!r) return;
+  var base = /\/en\//.test(location.pathname) ? '../resume/' : 'resume/';
+  r.addEventListener('click', function (e) {
+    e.preventDefault();
+    ['tracy-wang-resume-zh.pdf', 'tracy-wang-resume-en.pdf'].forEach(function (name, i) {
+      setTimeout(function () {
+        var a = document.createElement('a');
+        a.href = base + name; a.download = name;
+        document.body.appendChild(a); a.click(); a.remove();
+      }, i * 400);
+    });
+  });
+});
+
+// 手機整頁選單：點了選單裡的連結就關掉
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('.nav ul a');
+  if (!a) return;
+  var nav = a.closest('.nav');
+  if (!nav.classList.contains('open')) return;
+  nav.classList.remove('open');
+  document.body.classList.remove('menu-open');
+  var b = nav.querySelector('.menu-btn'); if (b) b.setAttribute('aria-expanded', 'false');
+});
