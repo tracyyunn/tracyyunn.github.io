@@ -83,16 +83,24 @@ document.addEventListener('click', function (e) {
 });
 
 // 選單捲動效果：捲動後毛玻璃＋變矮；往下捲收起、往上捲出現（電腦版）
+// 用 requestAnimationFrame 每一格檢查捲動位置，比只聽 scroll 事件穩定
 (function () {
-  var last = 0;
-  function onScroll() {
-    var y = window.scrollY, nav = document.querySelector('.nav');
+  var last = -1, ticking = false;
+  function update() {
+    ticking = false;
+    var nav = document.querySelector('.nav');
     if (!nav) return;
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    if (y === last) return;
     nav.classList.toggle('scrolled', y > 12);
-    nav.classList.toggle('hide', y > last && y > 160 && !nav.classList.contains('open'));
+    nav.classList.toggle('hide', last >= 0 && y > last && y > 160 && !nav.classList.contains('open'));
     last = y;
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('DOMContentLoaded', onScroll);
-  window.addEventListener('load', onScroll);
+  function req() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', req, { passive: true });
+  document.addEventListener('scroll', req, { passive: true, capture: true });
+  window.addEventListener('resize', req);
+  window.addEventListener('DOMContentLoaded', req);
+  window.addEventListener('load', req);
+  setInterval(update, 200);
 })();
