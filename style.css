@@ -341,9 +341,6 @@ video.cs-img { display: block; border-radius: var(--radius-img); }
 }
 
 /* 換頁淡入淡出（搭配 site.js） */
-body { transition: opacity .25s ease, transform .25s ease; }
-.page-enter body { opacity: 0; transform: translateY(8px); }
-.page-leave body { opacity: 0; }
 .cs-sec > p.quote { margin: 40px 0; }
 .quote--fuu { color: #5642D6; }
 /* 手機影片：標準手機框（1176×2360，螢幕 x86 y86 1010×2189）＋影片的螢幕畫面
@@ -539,3 +536,20 @@ body { transition: opacity .25s ease, transform .25s ease; }
   .nav.hide { transform: translateY(-100%); }
 }
 @media (prefers-reduced-motion: reduce) { .nav, .nav .wrap { transition: none; } }
+
+/* 換頁：瀏覽器原生交叉淡入（Chrome、Edge、Safari 18.2+），選單當成固定元素不跟著淡 */
+@view-transition { navigation: auto; }
+.nav { view-transition-name: site-nav; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; animation-timing-function: ease; }
+::view-transition-group(site-nav) { animation-duration: .3s; }
+@media (prefers-reduced-motion: reduce) { ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; } }
+
+/* Work / About 分段切換：白色滑塊用一個獨立的圓角塊，切換時滑過去 */
+@media (min-width: 810px) {
+  .nav-seg { position: relative; }
+  .nav ul .nav-seg a { position: relative; z-index: 1; width: 96px; justify-content: center; padding: 7px 0; }
+  .nav ul .nav-seg a[aria-current="page"] { background: none; box-shadow: none; }
+  .nav-seg::before { content: ""; position: absolute; top: 4px; bottom: 4px; left: 4px; width: 96px; border-radius: 999px; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.08); transition: transform .28s cubic-bezier(.3,.7,.2,1); }
+  .nav-seg[data-active="about"]::before { transform: translateX(96px); }
+  .nav-seg:not(.ready)::before { transition: none; }
+}

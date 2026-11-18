@@ -1,31 +1,26 @@
-// 站內換頁：先淡出再跳轉，新頁面載入時淡入
-(function () {
+// 站內換頁：用瀏覽器的 View Transitions 交叉淡入（CSS @view-transition），選單固定不動、不會閃白
+// Work / About 切換：先讓白色滑塊滑過去，再換頁
+window.addEventListener('DOMContentLoaded', function () {
+  var seg = document.querySelector('.nav-seg');
+  if (!seg) return;
+  var links = seg.querySelectorAll('a');
+  var page = location.pathname.split('/').pop() || 'index.html';
+  seg.setAttribute('data-active', page === 'about.html' ? 'about' : 'work');
+  seg.classList.add('ready');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce) return;
-
-  document.documentElement.classList.add('page-enter');
-  window.addEventListener('DOMContentLoaded', function () {
-    requestAnimationFrame(function () {
-      document.documentElement.classList.remove('page-enter');
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || window.innerWidth < 810) return;
+      var to = /about\.html$/.test(a.getAttribute('href')) ? 'about' : 'work';
+      if (to === seg.getAttribute('data-active')) { if (to === 'about') e.preventDefault(); return; }
+      e.preventDefault();
+      seg.setAttribute('data-active', to);
+      links.forEach(function (x) { x.removeAttribute('aria-current'); });
+      a.setAttribute('aria-current', 'page');
+      setTimeout(function () { location.href = a.href; }, reduce ? 0 : 280);
     });
   });
-
-  // 從上一頁按返回時，瀏覽器可能直接還原淡出後的畫面，要清掉
-  window.addEventListener('pageshow', function (e) {
-    if (e.persisted) document.documentElement.classList.remove('page-leave');
-  });
-
-  document.addEventListener('click', function (e) {
-    var a = e.target.closest('a');
-    if (!a || a.target === '_blank' || e.metaKey || e.ctrlKey || e.shiftKey) return;
-    var url = new URL(a.href, location.href);
-    var samePage = url.pathname === location.pathname;
-    if (url.origin !== location.origin || samePage || !/\.html$/.test(url.pathname)) return;
-    e.preventDefault();
-    document.documentElement.classList.add('page-leave');
-    setTimeout(function () { location.href = a.href; }, 250);
-  });
-})();
+});
 
 // 作品頁：往下捲超過一個畫面後，右下角出現「回到頂端」按鈕
 window.addEventListener('DOMContentLoaded', function () {
@@ -53,7 +48,7 @@ window.addEventListener('DOMContentLoaded', function () {
   nav.querySelectorAll('a:not(.lang):not(.resume)').forEach(function (a) {
     var t = a.getAttribute('href') || '';
     var isAbout = /about\.html$/.test(t);
-    var isWork = /index\.html#work$/.test(t);
+    var isWork = /index\.html(#work)?$/.test(t);
     if ((isAbout && page === 'about.html') || (isWork && page !== 'about.html')) a.setAttribute('aria-current', 'page');
   });
   var r = nav.querySelector('a.resume');
